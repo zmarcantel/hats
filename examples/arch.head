@@ -1,0 +1,37 @@
+##=================================================
+##
+##  Base Image Description Block
+##
+##=================================================
+
+
+base:
+
+  # What should Docker tag this image as?
+  name: Nova/base
+
+  # I like to start with @rahulg base image.
+  image: rahulg/arch
+
+  # If using any base other than the Docker-provided 'ubuntu'
+  # you must specify the package manager command
+  package_manager: pacman
+
+  # I will forever and always want these packages installed.
+  # No matter what hat I'm wearing
+  install:
+    - python
+    - python-pip
+    - gcc
+    - make
+    - vim
+    - zsh
+
+  # These commands will happen when the environment starts
+  startup:
+    - echo "Welcome Zach."
+
+  # These ports will open to the host machine
+  # For use with personal APIs or anything you can imagine
+  expose:
+    - 9001
